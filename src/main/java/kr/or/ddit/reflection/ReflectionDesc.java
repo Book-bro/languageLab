@@ -24,7 +24,7 @@ public class ReflectionDesc {
 		Field[] fields = objType.getDeclaredFields();
 //		Arrays.stream(fields)
 //				.forEach(System.out::println);
-		Method[] methods =  objType.getDeclaredMethods();
+		Method[] methods =  objType.getDeclaredMethods(); //getDeclaredMethods : 상속한 메소드를 제외하고 접근지정자에 상관없이 모든 메소드를 가져온다.
 //		Arrays.stream(methods)
 //				.forEach(System.out::println);
 		
@@ -40,7 +40,7 @@ public class ReflectionDesc {
 						Method setter = pd.getWriteMethod(); //setter
 						//getter
 //							Object fldValue = fld.get(dataObj);
-						Object fldValue = getter.invoke(dataObj);
+						Object fldValue = getter.invoke(dataObj); //invoke : 메소드 호출
 						//setter
 //							fld.set(newObj, fldValue);
 						setter.invoke(newObj,fldValue);
